@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+from django.conf import settings
 
 def themes_processor(request):
     """ add themes variables to the templates """
-    return {'THEMES_URL': 'themes/default/',
-            'THEME_BASE': 'themes/default/base.html',
-            'THEME_NAME': 'default',
+    THEME_NAME = getattr(settings, 'THEME_NAME', 'default')
+    return {'THEMES_URL': 'themes/%s/' % THEME_NAME,
+            'THEME_BASE': 'themes/%s/base.html' % THEME_NAME,
+            'THEME_NAME': THEME_NAME,
            }
 
 
