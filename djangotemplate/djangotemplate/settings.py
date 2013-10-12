@@ -23,7 +23,7 @@ DATABASES = {
 
 
 #THEMES
-THEME_NAME = 'revolution'
+THEME_NAME = 'default'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
