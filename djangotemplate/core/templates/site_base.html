@@ -1,1 +1,65 @@
 {% extends THEME_BASE %}
+
+{% block title %}Django-Themes Demostration Site{% endblock %}
+
+{% block navbar %}
+			<nav class="navbar-fixed-top">
+			    <div class="navbar">
+			    	<div class="navbar-inner">
+		                <ul class="nav">
+		                	<a href="#" class="brand">Django-Themes</a>
+		                    <li class="active"><a href="#">Home</a></li>
+		                    <li><a href="#">About us</a></li>
+		                    <li><a href="#">Services</a></li>
+		                    <li><a href="#">Products</a></li>
+		                    <li><a href="#">Contact us</a></li>
+		                </ul>
+				    </div>			
+			    </div>
+			</nav>
+{% endblock %}
+
+
+{% block header %}
+		  <div class="mainheader">
+		    <h1>django-themes</h1>
+		    <p class="lead">
+		    	Standard and pretting on templates django sites
+		    </p>
+			<p>
+				<a class="btn btn-large btn-primary" href="#"><i class="icon-star icon-white"></i> View on GitHub</a>
+			</p>						
+			<span>Let's create more themes...</span>
+		  </div>
+{% endblock %}
+			
+{% block footer %}
+				<div class="row-fluid">
+
+					<div class="span12" align="center">
+						<h4>Contribute it yourself</h4>
+						<p>
+							<a class="btn btn-primary" href="#"><i class="icon-star icon-white"></i> View on GitHub</a>
+						</p>						
+					</div>
+
+					<div class="span6">	      		
+						<p class="pull-left">
+				                <ul class="navbar">
+				                    <li><a href="#">Home</a></li>
+				                    <li><a href="#">Example</a></li>
+				                    <li><a href="#">Install</a></li>
+				                    <li><a href="#">Guide</a></li>
+				                    <li><a href="#">Feedback</a></li>
+				                </ul>
+						</p>
+						<p>
+							<address>
+							<strong>Django Themes.</strong><br>
+							000 My Adress<br>
+							My City and my Zipcode<br>
+							</address>	
+						</p>						
+					</div>
+				</div>
+{% endblock %}

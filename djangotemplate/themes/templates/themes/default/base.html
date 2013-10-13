@@ -4,33 +4,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 		<link href="{{ STATIC_URL }}common/bootstrap2/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="{{ STATIC_URL }}themes/default/css/base.css" rel="stylesheet" media="screen">
-        <title>To-Do lists</title>
+        <title>{% block title %}Django-Themes{% endblock %}</title>
     </head>
 	<body>
 
+		<!-- 
+		=== NAVBAR ===
+		-->
+		<div class="navbar navbar-inverse">
+
+			{% block navbar %}
+
+			{% endblock %}
+
+		</div>
+
+		<!-- 
+		=== HEADER ===
+		-->
 		<header id="header">
 
-			<nav class="navbar-fixed-top">
-			    <div class="navbar">
+			{% block header %}
 
-			    	<div class="navbar-inner">
-		                <ul class="nav">
-		                	<a href="#" class="brand">My Company</a>
-		                    <li class="active"><a href="#">Home</a></li>
-		                    <li><a href="#">About us</a></li>
-		                    <li><a href="#">Services</a></li>
-		                    <li><a href="#">Products</a></li>
-		                    <li><a href="#">Contact us</a></li>
-		                </ul>
-				    </div>
-
-										
-			    </div>
-			</nav>
-			<br/><br/>
+			{% endblock %}
 
 		</header>
 
+		<!-- 
+		=== MAIN CONTENT === 
+		-->
 		<div id="container">
 
 			{% block content %}
@@ -39,20 +41,22 @@
 
 		</div>
 
+		<!-- 
+		=== FOOTER === 
+		-->
+	    <footer id="footer">
+	    	<div class="well well-large">
 
+				{% block footer %}
 
+				{% endblock %}
 
-	    <footer id="footer" class="footer">
-	      	<nav class="navbar">  <!-- navbar-fixed-bottom -->
-				<p class="pull-left">
-					<pre>Street name, number, City/State  (04) 999 999 <a href="mailto: contact@themes.com">contact@themes.com</a>
-					</pre>
-				</p>
-	    	</nav>
+		    	<div class="footerBottom">  <!-- navbar-fixed-bottom -->
+					<p><small>Django-Themes - Powered by Bootstrap</small></p>
+				</div>
+
+	    	</div>
 	    </footer>
-
-
-
 
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="{{ STATIC_URL }}common/bootstrap2/js/bootstrap.min.js"></script>

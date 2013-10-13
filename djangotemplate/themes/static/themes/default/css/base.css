@@ -1,7 +1,31 @@
-#id_text {
-    font-size: larger;
-    padding: 10px;
-    margin-top: 2ex;
-    margin-left: -10px;
-    width: 100%;
+.mainheader {
+	position: relative;
+	padding: 40px 0;
+	color: white;
+	text-align: center;
+	background: #020031;
+	background: -moz-linear-gradient(5deg, #020031 0%, rgb(16, 16, 16) 70%);	
+	background: -webkit-linear-gradient(5deg, #020031 0%,rgb(16, 16, 16) 70%);
+	background: -o-linear-gradient(5deg, #020031 0%,rgb(16, 16, 16) 70%);
+	background: -ms-linear-gradient(5deg, #020031 0%,rgb(16, 16, 16) 70%);
+	background: linear-gradient(5deg, #020031 0%,rgb(16, 16, 16) 70%);
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#020031), color-stop(70%,rgb(16, 16, 16)));
+}
+
+.mainheader h1 {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.xheadercontainer {
+    margin-right: auto;
+    margin-left: auto;
+    width: 724px;
+}
+
+.footerBottom p {
+    text-align: center;
+    font-size: 15px;
 }
