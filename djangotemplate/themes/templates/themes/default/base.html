@@ -11,13 +11,20 @@
 		<!-- 
 		=== NAVBAR ===
 		-->
+		{% block navbar %}
 		<div class="navbar navbar-inverse">
 
-			{% block navbar %}
+			<nav class="navbar-fixed-top">
+			    <div class="navbar navbar-inner">
+			    	<a href="#" class="brand">{% block site_name %}Django-Themes{% endblock %}</a>
+					{% block navbar_items %}
 
-			{% endblock %}
+					{% endblock %}
+			    </div>
+			</nav>
 
 		</div>
+		{% endblock %}
 
 		<!-- 
 		=== HEADER ===

@@ -1,22 +1,18 @@
 {% extends THEME_BASE %}
 
 {% block title %}Django-Themes Demostration Site{% endblock %}
+{% block site_name %}My-Django-Themes{% endblock %}
 
-{% block navbar %}
-			<nav class="navbar-fixed-top">
-			    <div class="navbar">
-			    	<div class="navbar-inner">
-		                <ul class="nav">
-		                	<a href="#" class="brand">Django-Themes</a>
-		                    <li class="active"><a href="#">Home</a></li>
-		                    <li><a href="{% url 'show_examples'%}">Examples</a></li>
-		                    <li><a href="{% url 'show_themes'%}">Themes</a></li>
-		                    <li><a href="#">Install</a></li>
-		                    <li><a href="#">About</a></li>
-		                </ul>
-				    </div>			
-			    </div>
-			</nav>
+{% block navbar_items %}
+
+    <ul class="nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="{% url 'show_examples'%}">Examples</a></li>
+        <li><a href="{% url 'show_themes'%}">Themes</a></li>
+        <li><a href="#">Install</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
 {% endblock %}
 
 
