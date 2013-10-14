@@ -1,0 +1,33 @@
+{% extends 'site_base.html' %}
+
+{% block header %}
+		  <div>
+		  		<br /><br /><br /><br />
+		  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="row-fluid">
+	
+	<div class="span12">
+
+	    <div>
+
+			<form action="{% url 'update_themes'%}" class="form-inline">
+				<select name="selected_theme">
+					{% for theme in themes %}
+						<option value="{{ theme }}">{{ theme }}</option>
+					{% endfor %}
+				</select>
+				<button type="submit" class="btn">Apply</button>
+			</form>
+
+			
+	    </div>    
+	    
+	</div>
+
+</div>
+
+{% endblock %}
