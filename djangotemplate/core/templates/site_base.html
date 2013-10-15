@@ -4,15 +4,11 @@
 {% block site_name %}My-Django-Themes{% endblock %}
 
 {% block navbar_items %}
-
-    <ul class="nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="{% url 'show_examples'%}">Examples</a></li>
-        <li><a href="{% url 'show_themes'%}">Themes</a></li>
-        <li><a href="#">Install</a></li>
-        <li><a href="#">About</a></li>
-    </ul>
-
+	<li class="nav-link"><a href="#">Home</a></li>
+	<li class="nav-link"><a href="{% url 'show_examples'%}">Examples</a></li>
+	<li class="nav-link"><a href="{% url 'show_themes'%}">Themes</a></li>
+	<li class="nav-link"><a href="/">Install</a></li>
+	<li class="nav-link"><a href="/">About</a></li>
 {% endblock %}
 
 
@@ -28,34 +24,28 @@
 			<span>Let's create more themes...</span>
 		  </div>
 {% endblock %}
+
+
+{% block footer_top %}
+<div class="row-fluid">
+    <p class="text-style2 span8">Contribute it yourself</p>
+</div>
+{% endblock %}
 			
+
+
 {% block footer %}
-				<div class="row-fluid">
-
-					<div class="span12" align="center">
-						<h4>Contribute it yourself</h4>
-						<p>
-							<a class="btn btn-primary" href="#"><i class="icon-star icon-white"></i> View on GitHub</a>
-						</p>						
-					</div>
-
-					<div class="span6">	      		
-						<p class="pull-left">
-				                <ul class="navbar">
-				                    <li><a href="#">Home</a></li>
-				                    <li><a href="#">Example</a></li>
-				                    <li><a href="#">Install</a></li>
-				                    <li><a href="#">Guide</a></li>
-				                    <li><a href="#">Feedback</a></li>
-				                </ul>
-						</p>
-						<p>
-							<address>
-							<strong>Django Themes.</strong><br>
-							000 My Adress<br>
-							My City and my Zipcode<br>
-							</address>	
-						</p>						
-					</div>
-				</div>
+<ul class="footer-menu span4">
+    <li class="footer-link footer-title">Features</li>
+	<li class="footer-link"><a href="#" title="">Seletor</a></li>
+	<li class="footer-link"><a href="#" title="">Standard</a></li>
+	<li class="footer-link"><a href="#">Easy to use</a></li>
+    <li class="footer-link"><a href="#">Privacy Policy</a></li>
+    <li class="footer-link last-link"><a href="/terms">Terms of Service</a></li>
+</ul>
+<ul class="footer-menu span4">
+    <li class="footer-link footer-title">Community</li>
+    <li class="footer-link"><a href="#" title="">GitHub</a></li>
+    <li class="footer-link"><a href="#" title="">Twitter</a></li>
+</ul>
 {% endblock %}

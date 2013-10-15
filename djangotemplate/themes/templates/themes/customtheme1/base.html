@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+
+		<link href="{{ STATIC_URL }}common/bootstrap2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+		<link href="{{ STATIC_URL }}themes/customtheme1/css/base.css" rel="stylesheet" media="screen">
+
+
+		<style type="text/css">.olark-key,#hbl_code,#olark-data{display: none !important;}</style>
+		
+		<style type="text/css">@media print {#habla_beta_container_do_not_rely_on_div_classes_or_names {display: none !important}}</style>
+        <title>To-Do lists</title>
+    </head>
+	<body>
+
+		<div class="container-fluid">
+
+			<!-- 
+			=== NAVBAR ===
+			-->
+			{% block navbar %}
+			<div id="navbar-area">
+
+				<div id="headerWrap">
+					<a href="/"><h1 class="logo pull-left">{% block site_name %}Django-Themes{% endblock %}</h1></a>
+					<nav class="nav-with-logo">
+                        <ul class="nav-menu pull-right nav-with-logo">
+                        	{% block navbar_items %}
+                        	<li class="nav-link"><a href="#">Menu items here</a></li>
+                            {% endblock %}
+                        </ul>
+                    </nav>
+
+				</div>
+				
+			</div>
+			{% endblock %}
+
+		<!-- 
+		=== MAIN CONTENT === 
+		-->
+			<div id="contentWrap">
+		        <div id="content">
+					{% block content %}
+
+					{% endblock %}
+		        </div>
+		    </div>			
+
+
+
+			<!-- 
+			=== FOOTER === 
+			-->
+			<footer id="footer">
+				<div id="footerTopWrap">
+	                <div id="footerTopContent">
+	                	{% block footer_top %}
+	                	
+	                    {% endblock %}
+	                </div><!-- end slogan -->
+	            </div>
+
+
+				<div id="footerWrap">
+	                <div id="footerContent">
+	                	{% block footer %}
+
+	                    {% endblock %}
+	                    <p class="copyright">Django-Themes</p>
+	                </div><!-- end footer -->
+	            </div>
+			</footer>
+
+		</div>
+
+
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="{{ STATIC_URL }}common/bootstrap2/js/bootstrap.min.js"></script>
+	</body>
+</html>
+
+
