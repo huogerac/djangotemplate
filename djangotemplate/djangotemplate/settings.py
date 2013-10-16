@@ -1,5 +1,25 @@
 # Django settings for templateroger project.
 
+from os.path import abspath, basename, dirname, join, normpath
+from sys import path
+
+
+########## PATH CONFIGURATION
+# Absolute filesystem path to the Django project directory:
+DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+
+# Absolute filesystem path to the top-level project folder:
+SITE_ROOT = dirname(DJANGO_ROOT)
+
+# Site name:
+SITE_NAME = basename(DJANGO_ROOT)
+
+# Add our project to our pythonpath, this way we don't need to type our project
+# name in our dotted import paths:
+path.append(DJANGO_ROOT)
+########## END PATH CONFIGURATION
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -23,7 +43,7 @@ DATABASES = {
 
 
 #THEMES
-THEME_NAME = 'customtheme1'
+THEME_NAME = 'default'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -110,10 +130,12 @@ ROOT_URLCONF = 'djangotemplate.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'djangotemplate.wsgi.application'
 
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    normpath(join(DJANGO_ROOT, 'themes', 'templates')),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -144,6 +166,7 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     #'south',                         # Database migration helpers
     'debug_toolbar',				  # django-debug-toolbar
+    'floppyforms',                    # django-floppyforms
 )
 
 LOCAL_APPS = (

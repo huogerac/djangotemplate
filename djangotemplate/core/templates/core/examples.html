@@ -1,5 +1,7 @@
 {% extends 'site_base.html' %}
 
+{% load floppyforms %}
+
 {% block header %}
 		  <div>
 		  		<br /><br /><br />
@@ -11,12 +13,17 @@
 <div class="row-fluid">
 	
 	<div class="span12">
-
+		<br /><br />
 	    <div>
 
-			<h1>Examples</h1>
-			<code>code example</code>
-		
+			<h1>Form Examples</h1>
+			<form method="post" action="/some-action/">
+		    {% csrf_token %}
+
+		    {{ myform }}
+
+		    <p><input type="submit" value="Save!" class="btn btn-primary"></p>
+			</form>
 	    </div>    
 	    
 	</div>
