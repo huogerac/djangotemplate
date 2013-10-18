@@ -14,64 +14,78 @@
     </head>
 	<body>
 
-		<div class="container-fluid">
+		<div id="body-area" class="container-fluid"> 
 
 			<!-- 
 			=== NAVBAR ===
 			-->
-			{% block navbar %}
-			<div id="navbar-area">
+			{% block navbar_area %}
+				<div id="navbar-area">
+					<div id="headerWrap">
+						<a href="/"><h1 class="logo pull-left">{% block site_name %}Django-Themes{% endblock %}</h1></a>
+						<nav class="nav-with-logo">
+	                        <ul class="nav-menu pull-right nav-with-logo">
+	                        	{% block navbar %}
+	                        	<li class="nav-link"><a href="#">Menu items here</a></li>
+	                            {% endblock %}
+	                        </ul>
+	                    </nav>
 
-				<div id="headerWrap">
-					<a href="/"><h1 class="logo pull-left">{% block site_name %}Django-Themes{% endblock %}</h1></a>
-					<nav class="nav-with-logo">
-                        <ul class="nav-menu pull-right nav-with-logo">
-                        	{% block navbar_items %}
-                        	<li class="nav-link"><a href="#">Menu items here</a></li>
-                            {% endblock %}
-                        </ul>
-                    </nav>
-
+					</div>
 				</div>
-				
-			</div>
 			{% endblock %}
 
-		<!-- 
-		=== MAIN CONTENT === 
-		-->
-			<div id="contentWrap">
+
+			<!-- 
+			=== HEADER ===
+			-->
+			{% block header_area %}
+			<div id="header-area">
+				<header>
+				</header>
+			</div>
+			{% endblock %}			
+
+			<!-- 
+			=== MAIN CONTENT === 
+			-->
+			{% block content_area %}
+			<div id="container-area">
 		        <div id="content">
 					{% block content %}
 
 					{% endblock %}
 		        </div>
 		    </div>			
-
+			{% endblock %}
 
 
 			<!-- 
 			=== FOOTER === 
 			-->
+			{% block footer_area %}
 			<footer id="footer">
+
 				<div id="footerTopWrap">
-	                <div id="footerTopContent">
-	                	{% block footer_top %}
-	                	
-	                    {% endblock %}
-	                </div><!-- end slogan -->
-	            </div>
+                       <div id="footerTopContent">
+                       		<div class="row-fluid">
+                            {% block footer_top %}
+                               
+                           	{% endblock %}
+                           	</div>
+                       </div><!-- end slogan -->
+				</div>
 
+             	<div id="footerWrap">
+					<div id="footerContent">
+                	{% block footer %}
 
-				<div id="footerWrap">
-	                <div id="footerContent">
-	                	{% block footer %}
-
-	                    {% endblock %}
-	                    <p class="copyright">Django-Themes</p>
-	                </div><!-- end footer -->
+                    {% endblock %}
+                    <p class="copyright">Django-Themes - Powered by Bootstrap</p>
+	 				</div>
 	            </div>
 			</footer>
+			{% endblock %}
 
 		</div>
 

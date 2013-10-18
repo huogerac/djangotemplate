@@ -3,7 +3,7 @@
 {% block title %}Django-Themes Demostration Site{% endblock %}
 {% block site_name %}My-Django-Themes{% endblock %}
 
-{% block navbar_items %}
+{% block navbar %}
 	<li class="nav-link"><a href="#">Home</a></li>
 	<li class="nav-link"><a href="{% url 'show_examples'%}">Examples</a></li>
 	<li class="nav-link"><a href="{% url 'show_themes'%}">Themes</a></li>
@@ -13,23 +13,23 @@
 
 
 {% block header %}
-		  <div class="mainheader">
-		    <h1>django-themes</h1>
-		    <p class="lead">
-		    	Standard and pretting on templates django sites
-		    </p>
-			<p>
-				<a class="btn btn-large btn-primary" href="#"><i class="icon-star icon-white"></i> View on GitHub</a>
-			</p>						
-			<span>Let's create more themes...</span>
-		  </div>
+		 
+    <h1>django-themes</h1>
+    <p class="lead">Standard and pretting on templates django sites</p>
+	<p>
+		<a class="btn btn-large btn-primary" href="#">
+			<i class="icon-star icon-white"></i> View on GitHub
+		</a>
+	</p>						
+	<span>Let's create more themes...</span>
+		  
 {% endblock %}
 
 
 {% block footer_top %}
-<div class="row-fluid">
+
     <p class="text-style2 span8">Contribute it yourself</p>
-</div>
+
 {% endblock %}
 			
 
