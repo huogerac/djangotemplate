@@ -1,0 +1,42 @@
+{% extends 'registration/base_registration.html' %}
+
+{% load floppyforms %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
+
+    <div class="row">
+
+    	<div class="span2"></div>
+                
+        <div class="span6">
+            <h4>Login</h4>
+
+			<form method="post" action="{% url 'django.contrib.auth.views.login' %}">{% csrf_token %}
+
+				{{ form }}
+
+				<p><input type="submit" value="Save!" class="btn btn-primary"></p>
+			    
+			    
+			    <input type="hidden" name="next" value="{{ next }}" />
+			            
+			</form>
+
+
+
+
+
+
+
+            
+        </div>
+        
+        
+    </div>
+
+
+
+{% endblock %}
+
+
