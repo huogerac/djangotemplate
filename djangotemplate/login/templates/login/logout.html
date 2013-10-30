@@ -1,0 +1,13 @@
+{% extends 'login/base_login.html' %}
+
+{% block title %}Logged out{% endblock %}
+
+{% block content %}
+
+    <div align="center">
+        
+        <h2>Sessão encerrada!</h2>
+        Se desejar, efetue novo <a href="{% url 'url_login_auth' %}">login.</a>
+    </div>
+    
+{% endblock %}

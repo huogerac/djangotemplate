@@ -1,6 +1,7 @@
 # Django settings for templateroger project.
 
 from os.path import abspath, basename, dirname, join, normpath
+from os import environ
 from sys import path
 
 
@@ -44,6 +45,22 @@ DATABASES = {
 
 #THEMES
 THEME_NAME = 'default'
+
+#LOGIN
+LOGIN_REDIRECT_URL = '/core/home'
+
+########## EMAIL CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_HOST_PASSWORD = environ.get('EMAIL_HOST_PASSWORD', '')
+EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', 'huogerac@gmail.com')
+EMAIL_PORT = environ.get('EMAIL_PORT', 587)
+EMAIL_SUBJECT_PREFIX = '[%s] ' % SITE_NAME
+EMAIL_USE_TLS = True
+SERVER_EMAIL = EMAIL_HOST_USER
+
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
