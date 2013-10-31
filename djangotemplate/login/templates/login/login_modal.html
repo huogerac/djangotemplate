@@ -1,0 +1,17 @@
+  <div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-body">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="loginModalLabel">Login</h3>
+      </div>
+
+			<form method="post" action="{% url 'django.contrib.auth.views.login' %}">{% csrf_token %}
+
+				<p><input name="username" required="" id="id_username" type="text"></p>
+				<p><input name="password" required="" id="id_password" type="password"></p>
+				<p><input type="submit" value="Login" class="btn btn-primary"></p>
+			            
+			</form>
+
+    </div>
+  </div>

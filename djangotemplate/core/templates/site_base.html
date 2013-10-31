@@ -9,6 +9,15 @@
 	<li class="nav-link"><a href="{% url 'show_themes'%}">Themes</a></li>
 	<li class="nav-link"><a href="/">Install</a></li>
 	<li class="nav-link"><a href="/">About</a></li>
+
+
+	{% if user.is_authenticated %}
+	<li class="nav-link"><a href="{% url 'auth_logout' %}">Logout</a></li>
+	{% else %}
+	<li class="nav-link"><a href="{% url 'url_login_auth' %}">Login</a></li>
+	<li class="nav-link"><button data-toggle="modal" href="#loginModal" class="btn font-bold">LoginModal</button></li>
+	{% endif %}
+
 {% endblock %}
 
 
@@ -29,6 +38,8 @@
 {% block footer_top %}
 
     <p class="text-style2 span8">Contribute it yourself</p>
+
+    {% include "login/login_modal.html" %}
 
 {% endblock %}
 			
