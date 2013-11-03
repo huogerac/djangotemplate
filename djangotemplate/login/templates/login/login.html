@@ -16,19 +16,12 @@
 
 				{{ form }}
 
-				{% if form.non_field_errors %}
-				
-
-		        <div class="alert alert-warning">
+		        <div>
 		            <a class="close" href="#" data-dismiss="alert">×</a>
-		            <p><a href="{% url 'url_login_password_reset' %}">Esqueceu</a> a sua senha?</p>
-		        </div><!--- .alert.alert-error -->
-
-
-				{% endif %}
+		            <p><a href="{% url 'url_login_password_reset' %}">Forgot </a> your password?</p>
+		        </div>
 
 				<p><input type="submit" value="Login" class="btn btn-primary"></p>
-			    
 			    
 			    <input type="hidden" name="next" value="{{ next }}" />
 			            

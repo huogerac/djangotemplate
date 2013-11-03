@@ -34,12 +34,13 @@
 		  
 {% endblock %}
 
+{% block extra_content_area %}
+	{% include "login/login_modal.html" %}
+{% endblock %}
 
 {% block footer_top %}
 
     <p class="text-style2 span8">Contribute it yourself</p>
-
-    {% include "login/login_modal.html" %}
 
 {% endblock %}
 			

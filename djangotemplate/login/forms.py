@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, get_user_model
 import floppyforms as forms
-from floppyforms.widgets import PasswordInput
+from floppyforms.widgets import PasswordInput, TextInput
 from django.contrib.auth.forms import AuthenticationForm
 
 class LoginForm(AuthenticationForm, forms.Form):
@@ -10,8 +10,10 @@ class LoginForm(AuthenticationForm, forms.Form):
     message_incorrect_password = "email/username or password invalid."
     message_inactive = "This account is inactive."
 
-    username = forms.CharField(label="email or username", max_length=76)
-    password = forms.CharField(widget=PasswordInput())
+    username = forms.CharField(max_length=76, 
+                    widget=TextInput(attrs={'placeholder': 'Email or Username'}))
+    password = forms.CharField(widget=PasswordInput(attrs={'placeholder': 'Password'}))
+
 
     def clean(self):
         username = self.cleaned_data.get('username')

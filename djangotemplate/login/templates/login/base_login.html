@@ -1,46 +1,20 @@
-<!DOCTYPE html>
-{% load static %}
+{% extends THEME_BASE %}
 
-<html lang='en'>
+{% block title %}Django-Themes Demostration Site - Login{% endblock %}
+{% block site_name %}My-Django-Themes{% endblock %}
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Billcode">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-        <link href="{{ STATIC_URL }}common/bootstrap2/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="{{ STATIC_URL }}themes/default/css/base.css" rel="stylesheet" media="screen">
-        <title>{% block title %}Django-Themes{% endblock %}</title>
-    </head>
+{% block navbar_area %}
+{% endblock %}
 
-    <body> <!--<body data-spy="scroll" data-target=".subnav" data-offset="50">-->
 
-        <div id="body-area" class="container-fluid"> 
-    
-	
-            <!-- 
-            === MAIN CONTENT === 
-            -->
-            {% block content_area %}
-            <div id="container-area">
-                <div id="content">
-                {% block content %}
+{% block header_area %}
+{% endblock %}
 
-                {% endblock %}
-                </div>
-            </div>
-            {% endblock %}
 
-        </div>
+{% block extra_content_area %}
+{% endblock %}
 
-        <!-- javascript -->        
-        <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="{{ STATIC_URL }}common/bootstrap2/js/bootstrap.min.js"></script>
-             
-        <!--  extra javascript-->
-        {% block javascript %}
-        
-        {% endblock %}
-		
-	</body>
 
-</html>
+{% block footer_area %}
+{% endblock %}
+

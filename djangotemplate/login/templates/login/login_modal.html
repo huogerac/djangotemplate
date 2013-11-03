@@ -7,8 +7,17 @@
 
 			<form method="post" action="{% url 'django.contrib.auth.views.login' %}">{% csrf_token %}
 
-				<p><input name="username" required="" id="id_username" type="text"></p>
-				<p><input name="password" required="" id="id_password" type="password"></p>
+        <div class="control-group">
+          <div class="controls  field-username">
+            <input type="text" name="username" required="" placeholder="Email or Username" id="id_username" maxlength="76">
+          </div>
+        </div><!--- .controls -->
+
+        <div class="control-group">
+          <div class="controls  field-password">
+            <input type="password" name="password" required="" placeholder="Password" id="id_password">
+          </div>
+        </div><!--- .controls -->
 				<p><input type="submit" value="Login" class="btn btn-primary"></p>
 			            
 			</form>
