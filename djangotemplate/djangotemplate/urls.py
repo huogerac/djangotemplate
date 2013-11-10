@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     
     url(r'^core/', include('core.urls')),
     url(r'^login/', include('login.urls')),
+    url(r'^signup/', include('signup.urls')),
 )

@@ -60,7 +60,8 @@ EMAIL_SUBJECT_PREFIX = '[%s] ' % SITE_NAME
 EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
 
-
+######## REGISTRATION
+ACCOUNT_ACTIVATION_DAYS = 7
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -191,6 +192,7 @@ LOCAL_APPS = (
     'core',
     'themes',
     'login',
+    'signup',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
