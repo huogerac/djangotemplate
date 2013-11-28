@@ -1,7 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 #from django import forms
 import floppyforms as forms
-from floppyforms.widgets import PasswordInput, HiddenInput, CheckboxInput, EmailInput #TextInput
+from floppyforms.widgets import PasswordInput, HiddenInput, CheckboxInput, EmailInput, TextInput
 from django.contrib.auth.models import User
 
 from registration.forms import RegistrationFormTermsOfService
@@ -39,3 +39,9 @@ class RegistrationSignupForm(RegistrationFormTermsOfService, forms.Form):
             self.cleaned_data['username'] = username[:username.find('@')]
 
         return self.cleaned_data
+
+
+class UserProfileRegistrationForm(forms.Form):
+    """ populate fields not populated on signup """
+    first_name = forms.CharField(widget=TextInput(attrs={'placeholder': 'First Name'}), label=_("First name"))
+    last_name = forms.CharField(widget=TextInput(attrs={'placeholder': 'Last Name'}), label=_("Last name"))
